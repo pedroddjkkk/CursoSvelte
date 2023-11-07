@@ -1,5 +1,5 @@
 import prisma from "$lib/prisma";
-import type { Actions } from "./$types";
+import type { Actions, PageServerLoad } from "./$types";
 
 export const actions = {
   default: async (event) => {
@@ -25,6 +25,12 @@ export const actions = {
     return {
       status: 200,
       body: post,
-    }
+    };
   },
 } satisfies Actions;
+
+export const load: PageServerLoad = async () => {
+  return {
+    posts: await prisma.post.findMany(),
+  };
+};
