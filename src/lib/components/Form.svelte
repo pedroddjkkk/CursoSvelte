@@ -1,7 +1,8 @@
 <script lang="ts">
+  import "@fontsource/roboto";
 </script>
 
-<form action="">
+<form method="post">
   <h3>Criar Post</h3>
   <div>
     <label for="title">Titulo</label>
@@ -13,6 +14,10 @@
 </form>
 
 <style>
+  * {
+    font-family: "Roboto", sans-serif;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -20,6 +25,7 @@
     padding: 10px;
     border: 1px solid #ccc;
     margin: 45px auto 0 auto;
+    border-radius: 2px;
   }
 
   form > div {
@@ -42,6 +48,7 @@
     background-color: rgb(8, 182, 8);
     padding: 10px;
     color: #fff;
+    border-radius: 2px;
   }
 
   button:hover {
