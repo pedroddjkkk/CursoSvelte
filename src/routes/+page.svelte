@@ -14,16 +14,18 @@
 <div class="wrapper">
   {#if data}
     {#each data as character}
-      <div>
-        <h1>{character.name}</h1>
-        <h3>{character.gender}</h3>
+      <a href={`${character.id}`}>
+        <div>
+          <h1>{character.name}</h1>
+          <h3>{character.gender}</h3>
 
-        <img src={character.image} alt={character.name} />
+          <img src={character.image} alt={character.name} />
 
-        {#if character.gender === "Male"}
-          <h3>Olá</h3>
-        {/if}
-      </div>
+          {#if character.gender === "Male"}
+            <h3>Olá</h3>
+          {/if}
+        </div>
+      </a>
     {/each}
   {/if}
 </div>
@@ -37,6 +39,11 @@
     flex-wrap: wrap;
   }
 
+  .wrapper a {
+    text-decoration: none;
+    color: #000;
+  }
+
   .wrapper div {
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -46,9 +53,13 @@
     height: 600px;
   }
 
+  .wrapper div:hover{
+    transition: all 0.2s ease-in-out;
+    background-color: #f1f1f1;
+  }
+
   .wrapper div img {
     width: 100%;
     height: auto;
   }
-  
 </style>
